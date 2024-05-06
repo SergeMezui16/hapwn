@@ -5,8 +5,9 @@ export function SignIn() {
     <form
       action={async (formData) => {
         "use server"
-        await signIn("credentials", formData)
+        await signIn("credentials", {email: "eee@ee.com", password: "1234"})
       }}
+      className="flex flex-col container w-40 p-5"
     >
       <label>
         Email
