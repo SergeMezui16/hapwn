@@ -13,7 +13,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       authorize: async (credentials) => {
 
-
         const { email, password } = await signInSchema.parseAsync(credentials);
 
         // logic to verify if user exists
@@ -30,4 +29,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  pages: {
+    signIn: "/login",
+  },
 })
